@@ -4,10 +4,10 @@ import Counter from './Counter';
 import Batsman from './Batsman';
 import Users from './Users';
 import { Suspense } from 'react';
-import Friends from './friends';
+import Friends from "./Friends";
 
-const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
-                  .then(res => res.json())
+// const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users")
+//                   .then(res => res.json())
 
 const fetchFriends = async() => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users")
@@ -44,9 +44,9 @@ function App() {
       {/* 32-4 Understand the concept of useState and react hooks */}
       <Batsman></Batsman>
       {/* 32-5 (Advanced) Understand the concept of use() hook */}
-      <Suspense fallback={<h3>Loading...</h3>}>
+      {/* <Suspense fallback={<h3>Loading...</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
-      </Suspense>
+      </Suspense> */}
       {/* 32-6 (Recap) Load dynamic data, API call using use() */}
       <Suspense fallback={<h3>Friends are coming for treat...</h3>}>
         <Friends friendsPromise={friendsPromise}></Friends>
